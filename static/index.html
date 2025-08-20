@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Qenani Chat</title>
+  <link rel="icon" href="/static/favicon.png" type="image/png"/>
+  <link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+  <div id="status" class="statusbar"></div>
+
+  <div id="auth" class="auth-card">
+    <h1>Mirë se erdhe 👋</h1>
+    <p>Krijo llogari ose hyr për të vazhduar.</p>
+    <div class="form-row">
+      <label for="username">Përdoruesi</label>
+      <input id="username" placeholder="p.sh. rubin"/>
+    </div>
+    <div class="form-row">
+      <label for="password">Fjalëkalimi</label>
+      <input id="password" type="password" placeholder="••••••••"/>
+    </div>
+    <div class="btn-row">
+      <button id="signupBtn" class="btn primary">Krijo llogari</button>
+      <button id="loginBtn"  class="btn">Hyr</button>
+    </div>
+    <div id="authMsg" class="msg"></div>
+  </div>
+
+  <div id="app" class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <img src="/static/favicon.png" class="logo" alt="logo"/>
+          <div>
+            <div class="brand-title">Qenani Chat</div>
+            <div class="brand-sub" id="meName">—</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="themeBtn" class="btn small">Blu/Jes</button>
+          <button id="signoutBtn" class="btn small danger">Dil</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="global">Global</button>
+        <button class="tab" data-tab="direct">Direkte</button>
+      </div>
+
+      <div class="search">
+        <input id="searchUsers" placeholder="Kërko përdorues…"/>
+      </div>
+
+      <ul id="usersList" class="users"></ul>
+
+      <div class="add-user">
+        <div class="form-row">
+          <input id="newUserName" placeholder="Përdorues i ri"/>
+        </div>
+        <div class="form-row">
+          <input id="newUserPass" type="password" placeholder="Fjalëkalim i ri"/>
+        </div>
+        <button id="addUserBtn" class="btn primary">Shto përdorues</button>
+        <div id="addUserMsg" class="msg"></div>
+      </div>
+    </aside>
+
+    <main class="chat">
+      <div id="chatHeader" class="chat-header">Global (Anonim)</div>
+      <div id="messages" class="messages"></div>
+      <div class="composer">
+        <input id="msgInput" placeholder="Shkruaj mesazhin…"/>
+        <button id="sendBtn" class="btn primary">Dërgo</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
